@@ -1,0 +1,115 @@
+/*
+boxタグをつけるとカードになるよ^^
+flexタグをつけると横並びなるよ^^
+↓変数シリーズ(グラデーション変えたりできる)
+*/
+:root{
+    --text-color:white;
+    --text-color-placeholder:rgb(184, 184, 184);
+    --button-color:
+        linear-gradient(rgba(255,0,190,0.4),rgba(120,0,255,0.4));
+    --input-color:
+        linear-gradient(rgba(255,0,190,0.4),rgba(120,0,255,0.4));
+    --card-color:
+        linear-gradient(rgba(255,0,190,0.4),rgba(120,0,255,0.4));
+    --background-color:
+        linear-gradient(rgb(255,0,190),rgb(120,0,255));
+    --border-color:rgb(170, 170, 170);
+    --shadow-color:gray;
+}
+
+main{
+    padding-top:40px;
+    
+}
+body{
+    min-height:100vh;
+    background:var(--background-color);
+}
+p,h1,h2,h3{
+    color:var(--text-color);
+    font-family:inherit;
+}
+input{
+    font-family:inherit;
+    transition:0.2s;
+    background:var(--input-color) border-box;
+    color:var(--text-color);
+    border-radius : 3px;
+    box-shadow:5px 5px 10px -2px var(--shadow-color);
+    border:2px solid var(--border-color);
+}
+input::placeholder{
+    color:var(--text-color-placeholder)
+}
+input:hover{
+    backdrop-filter: none;
+}
+button{
+    backdrop-filter: none;
+    font-family:inherit;
+    transition:0.2s;
+    background:var(--button-color) border-box;
+    color:var(--text-color);
+    border-radius : 10px;
+    box-shadow:5px 5px 10px -2px var(--shadow-color);
+    border:2px solid var(--border-color);
+}
+button:focus,button:hover{
+    transform:scale(1.05);
+    backdrop-filter: blur(10px);
+    cursor:pointer;
+}
+button:active{
+    backdrop-filter: none;
+    transform:scale(1.00)
+}
+button:disabled{
+    box-shadow:none;
+    transform:scale(1);
+    cursor:not-allowed;
+}
+header p{
+    background-color: transparent;
+    
+}
+header p.logo{
+    font-weight: bold;
+}
+header{
+    align-items:center;
+    backdrop-filter: blur(10px);
+    user-select:none;
+    justify-content:center;
+    box-sizing:border-box;
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    gap: 20px;
+    height:40px;
+    width:100%;
+}
+.flex{
+    display:flex;
+    gap:10px;
+}
+.center{
+    display:grid;
+    place-items:center;
+}
+.box{
+    backdrop-filter:none;
+    transition:0.1s;
+    transform:scale(0.98);
+    background:var(--card-color) border-box;
+    color:var(--text-color);
+    border-radius : 10px;
+    box-shadow:5px 5px 10px -2px var(--shadow-color);
+    border:2px solid var(--border-color);
+    padding: 20px;
+}
+.box:hover{
+    backdrop-filter: blur(10px);
+    transform:scale(1.00);
+}
